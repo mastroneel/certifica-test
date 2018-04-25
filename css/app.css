@@ -1,0 +1,27 @@
+.outer {
+  height: 70vh;
+  min-height: 400px;
+  width: 70vw;
+  margin: 0 auto;
+  border: 50px solid #262626;
+  border-radius: 40px;
+  margin-top: 40px; }
+
+.trapezoid {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 80px;
+  height: 0;
+  border: 40px solid transparent;
+  border-top: 0 solid;
+  border-bottom: 70px solid #1abc9c;
+  margin: 0 auto; }
+
+.rectangle {
+  width: 320px;
+  height: 0;
+  border: 15px solid #262626;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=app.css.map */
