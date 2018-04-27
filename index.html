@@ -3,15 +3,64 @@
   <head>
     <meta charset="utf-8">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Certifica</title>
   </head>
   <body>
-
+    <div class="instructions">
+      <!-- <img src="img/logo.jpg"> -->
+      <!-- <h1>Sign up</h1> -->
+      <h2>Please enter your information, then press 'enter'</h2>
+      <p>
+        <span>Already</span> have an account?
+        <!-- <a id="signin-signup" href="#" onclick="toggleForms()">Sign In</a> -->
+        <a id="signin-signup" href="#">Sign In</a>
+      </p>
+    </div>
     <div class="outer">
-
+      <div class="inner">
+        <div class="window-label">
+          <div class="close-button">
+            <p>x</p>
+          </div>
+          <div class="minimize-button">
+            <p>-</p>
+          </div>
+          <div class="maximize-button">
+            <p>+</p>
+          </div>
+        </div>
+        <div class="window">
+          <form id="signup">
+            <label class="first-label" for="first-name">> first-name$</label>
+            <input id="first-name" type="text" autofocus />
+            <br>
+            <label for="last-name">> last-name$</label>
+            <input id="last-name" type="text" />
+            <br>
+            <label for="email">> email$</label>
+            <input id="email" type="text" />
+            <br>
+            <label for="username">> username$</label>
+            <input id="username" type="text" />
+            <br>
+            <label for="password">> password$</label>
+            <input id="password" type="text" />
+            <br>
+            <label for="confirm-password">> confirm-password$</label>
+            <input id="confirm-password" type="text" />
+          </form>
+          <form id="signin">
+            <label class="first-label" for="signin-username">> username$</label>
+            <input id="signin-username" type="text" autofocus />
+            <br>
+            <label for="signin-password">> password$</label>
+            <input id="signin-password" type="text" />
+          </form>
+        </div>
+      </div>
     </div>
 
     <!-- trapezoid for top of computer base -->
@@ -21,6 +70,144 @@
     <!-- rectangle for bottom of computer base -->
     <div class="rectangle">
     </div>
+
+
+
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+<script>
+// change enter to tab-like function to change between inputs
+// show next line
+// $('input').keypress(function(e) {
+//   if (e.which == 13) {
+//       $(this).nextAll('input').focus();
+//       e.preventDefault();
+//       // $(this).nextAll('label').css("visibility", "visible");
+//   }
+// });
+
+// function toggleForms() {
+//   if ('#signup') {
+//     $('#signup').css("display", "none");
+//     $('#signin').css("display", "block");
+//     $('span').text("Don't");
+//     $('#signin-signup').text('Sign Up');
+//   } else {
+//     $('#signin').css("display", "none");
+//     $('#signup').css("display", "block");
+//     $('span').text("Already");
+//     $('#signin-signup').text('Sign In');
+//   }
+// };
+
+$("body").on('click','#signin-signup', function() {
+  var that = $(this);
+  if ($('#signup').is(":visible")) {
+    $('#signup').css("display", "none");
+    $('#signin').css("display", "block");
+    $('span').text("Don't");
+    $('#signin-signup').text('Sign Up');
+  } else {
+    $('#signin').css("display", "none");
+    $('#signup').css("display", "block");
+    $('span').text("Already");
+    $('#signin-signup').text('Sign In');
+  }
+});
+
+
+$('#first-name').keypress(function(e) {
+  if (e.which == 13) {
+      $('#last-name').focus();
+      e.preventDefault();
+      $("label[for='last-name']").css("visibility", "visible");
+  }
+});
+
+$('#last-name').keypress(function(e) {
+  if (e.which == 13) {
+      $('#email').focus();
+      e.preventDefault();
+      $("label[for='email']").css("visibility", "visible");
+  }
+});
+
+$('#email').keypress(function(e) {
+  if (e.which == 13) {
+      $('#username').focus();
+      e.preventDefault();
+      $("label[for='username']").css("visibility", "visible");
+  }
+});
+
+$('#username').keypress(function(e) {
+  if (e.which == 13) {
+      $('#password').focus();
+      e.preventDefault();
+      $("label[for='password']").css("visibility", "visible");
+  }
+});
+
+$('#password').keypress(function(e) {
+  if (e.which == 13) {
+      $('#confirm-password').focus();
+      e.preventDefault();
+      $("label[for='confirm-password']").css("visibility", "visible");
+  }
+});
+
+$('#signin-username').keypress(function(e) {
+  if (e.which == 13) {
+      $('#signin-password').focus();
+      e.preventDefault();
+      $("label[for='signin-password']").css("visibility", "visible");
+  }
+});
+
+
+$( "#last-name" ).focus(function() {
+  $("label[for='last-name']").css("visibility", "visible");
+});
+
+$( "#email" ).focus(function() {
+  $("label[for='email']").css("visibility", "visible");
+});
+
+$( "#username" ).focus(function() {
+  $("label[for='username']").css("visibility", "visible");
+});
+
+$( "#password" ).focus(function() {
+  $("label[for='password']").css("visibility", "visible");
+});
+
+$( "#confirm-password" ).focus(function() {
+  $("label[for='confirm-password']").css("visibility", "visible");
+});
+
+$( "#signin-password" ).focus(function() {
+  $("label[for='signin-password']").css("visibility", "visible");
+});
+
+
+
+// show next line on focus
+// if ($('#password').is(':focus')) {
+//   $("label[for=password]").addClass('visible');
+//   $("body").css("background-color", "yellow");
+// }
+// if ($('input').is(':focus')) {
+//   $("label[for=password]").addClass('visible');
+//   $("label[for=password]").css("visibility", "visible");
+// }
+
+</script>
+
+
+
 
   </body>
 </html>

@@ -1,11 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:800");
+@import url("https://fonts.googleapis.com/css?family=Overpass+Mono:700");
+.instructions {
+  text-align: center;
+  font-family: 'Nunito';
+  color: #262626; }
+  .instructions h2 {
+    font-size: 1.5em; }
+  .instructions a, .instructions a:visited {
+    color: #60c7ae;
+    transition: 0.2s; }
+    .instructions a:hover, .instructions a:visited:hover {
+      text-decoration: none;
+      color: #489886;
+      transition: 0.2s; }
+
 .outer {
-  height: 70vh;
-  min-height: 400px;
-  width: 70vw;
+  height: 450px;
+  width: 900px;
   margin: 0 auto;
-  border: 50px solid #262626;
+  border: 45px solid #262626;
   border-radius: 40px;
-  margin-top: 40px; }
+  margin-top: 20px; }
+  .outer .inner {
+    background-color: #eaeaea;
+    height: 100%;
+    padding-top: 20px; }
+    .outer .inner .window-label {
+      height: 25px;
+      width: 80%;
+      margin: 0 auto;
+      background-color: #60c7ae;
+      padding-left: 10px;
+      border-radius: 2px;
+      z-index: 100;
+      position: relative; }
+      .outer .inner .window-label .close-button, .outer .inner .window-label .minimize-button, .outer .inner .window-label .maximize-button {
+        font-family: 'Nunito', sans-serif;
+        height: 15px;
+        width: 15px;
+        font-size: 12px;
+        line-height: 15px;
+        border-radius: 50%;
+        display: inline-flex;
+        color: #f6fefe;
+        margin: 0 2px;
+        transition: 0.2s; }
+        .outer .inner .window-label .close-button p, .outer .inner .window-label .minimize-button p, .outer .inner .window-label .maximize-button p {
+          margin: 0 auto;
+          opacity: 0; }
+        .outer .inner .window-label .close-button:hover p, .outer .inner .window-label .minimize-button:hover p, .outer .inner .window-label .maximize-button:hover p {
+          opacity: 1;
+          transition: 0.2s; }
+      .outer .inner .window-label .close-button {
+        background-color: #489886; }
+      .outer .inner .window-label .minimize-button {
+        background-color: #489886; }
+      .outer .inner .window-label .maximize-button {
+        background-color: #489886; }
+    .outer .inner .window {
+      width: 79.8%;
+      min-height: 250px;
+      background-color: #fff;
+      border-top: none;
+      border-radius: 5px;
+      margin: 0 auto;
+      z-index: 1;
+      position: relative;
+      font-family: 'Overpass Mono', monospace;
+      letter-spacing: 1px;
+      padding: 5px 10px; }
+      .outer .inner .window form label {
+        font-weight: normal;
+        visibility: hidden; }
+      .outer .inner .window form .first-label {
+        visibility: visible; }
+      .outer .inner .window form input {
+        border: none; }
+        .outer .inner .window form input:focus {
+          outline: none; }
+
+#signin {
+  display: none; }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset; }
 
 .trapezoid {
   -webkit-box-sizing: content-box;
@@ -15,13 +93,14 @@
   height: 0;
   border: 40px solid transparent;
   border-top: 0 solid;
-  border-bottom: 70px solid #1abc9c;
+  border-bottom: 70px solid #848484;
   margin: 0 auto; }
 
 .rectangle {
   width: 320px;
   height: 0;
   border: 15px solid #262626;
+  border-radius: 2px;
   margin: 0 auto; }
 
 /*# sourceMappingURL=app.css.map */
