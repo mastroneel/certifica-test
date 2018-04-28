@@ -2,19 +2,19 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:800');
 @import url('https://fonts.googleapis.com/css?family=Overpass+Mono:700');
 
+
+// header styles
 .instructions {
   text-align: center;
   font-family: 'Nunito';
-  // img {
-  //   width: 90px;
-  //   margin-top: 40px;
-  // }
-  // h1 {
-  //   font-size: 1.8em;
-  // }
+  img {
+    width: 70px;
+    margin-top: 15px;
+  }
   color: #262626;
   h2 {
     font-size: 1.5em;
+    margin-top: 5px;
   }
   a, a:visited {
     color: #60c7ae;
@@ -29,7 +29,7 @@
 
 // Computer styles
 .outer {
-  height: 450px;
+  height: 430px;
   width: 900px;
   margin: 0 auto;
   border: 45px solid #262626;
@@ -48,7 +48,7 @@
       border-radius: 2px;
       z-index: 100;
       position: relative;
-      .close-button, .minimize-button, .maximize-button {
+      .button {
         font-family: 'Nunito', sans-serif;
         height: 15px;
         width: 15px;
@@ -59,6 +59,7 @@
         color: #f6fefe;
         margin: 0 2px;
         transition: 0.2s;
+        background-color: #489886;
         p {
           margin: 0 auto;
           opacity: 0;
@@ -70,23 +71,10 @@
           }
         }
       }
-      .close-button {
-        // background-color: #eb5d61;
-        background-color: #489886;
-      }
-      .minimize-button {
-        // background-color: #f9f347;
-        background-color: #489886;
-      }
-      .maximize-button {
-        // background-color: #71ca67;
-        background-color: #489886;
-      }
     }
     .window {
       width: 79.8%;
       min-height: 250px;
-      // border: 3px solid #262626;
       background-color: #fff;
       border-top: none;
       border-radius: 5px;
@@ -96,7 +84,29 @@
       font-family: 'Overpass Mono', monospace;
       letter-spacing: 1px;
       padding: 5px 10px;
+      // form styles
+      // display signup first by default
+      #signin {
+        display: none;
+      }
       form {
+        // caret styles
+        .caret {
+          display: inline-block;
+          height: 1.2em;
+          width: 0.7em;
+          margin-top: -4px;
+          vertical-align: middle;
+          background-color: #262626;
+          visibility: hidden;
+        }
+        .caret-1, .caret-7 {
+          visibility: visible;
+        }
+
+        .transparent {
+          opacity: 0;
+        }
         label {
           font-weight: normal;
           visibility: hidden;
@@ -104,37 +114,23 @@
         .first-label {
           visibility: visible;
         }
-        // input:-webkit-autofill {
-        //   background-color: transparent !important;
-        // }
         input {
           border: none;
-          // caret-color: transparent;
+          caret-color: transparent;
           &:focus {
             outline: none;
           }
+        }
+        // get rid of automatic Chrome autofill background
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px white inset;
         }
       }
     }
   }
 }
 
-#signin {
-  display: none;
-}
-
-
-// visibility class to be added with jQuery to show next line in the terminal
-// .visible {
-//   visibility: visible;
-// }
-
-// get rid of automatic Chrome autofill background
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px white inset;
-}
-
-
+// monitor base styles
 .trapezoid {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -148,10 +144,159 @@ input:-webkit-autofill {
   margin: 0 auto;
 }
 
+// monitor base styles
 .rectangle {
   width: 320px;
   height: 0;
   border: 15px solid #262626;
   border-radius: 2px;
   margin: 0 auto;
+}
+
+// welcome page styles
+.welcome {
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  margin-top: 120px;
+  img {
+    width: 120px;
+  }
+}
+
+// *************
+// Media queries
+// *************
+
+// larger screens
+@media (min-width: 1600px) and (min-height: 1000px) {
+  .instructions {
+    img {
+      margin-top: 60px;
+      width: 90px;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.5em;
+    }
+  }
+  .outer {
+    width: 1100px;
+    height: 500px;
+  }
+}
+
+@media (min-width: 1850px) and (min-height: 1150px) {
+  .instructions {
+    img {
+      margin-top: 80px;
+      width: 110px;
+    }
+  }
+  .outer {
+    width: 1300px;
+    height: 600px;
+  }
+}
+
+@media (min-width: 2400px) and (min-height: 1400px) {
+  .instructions {
+    img {
+      margin-top: 100px;
+      width: 150px;
+    }
+    h2 {
+      font-size: 2.5em;
+    }
+    p {
+      font-size: 2em;
+    }
+  }
+  .outer {
+    width: 1800px;
+    height: 800px;
+    .inner {
+      padding-top: 100px;
+      .window {
+        min-height: 400px;
+        form {
+          label, input {
+            font-size: 2em;
+          }
+          .caret {
+            height: 2em;
+            width: 1em;
+          }
+        }
+      }
+    }
+  }
+}
+
+// smaller screens
+@media (max-width: 1000px) {
+  .outer {
+    height: 420px;
+    width: 800px;
+  }
+}
+
+@media (max-width: 850px) {
+  .outer {
+    height: 390px;
+    width: 700px;
+    .inner {
+      .window {
+        min-height: 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .outer {
+    height: 370px;
+    width: 600px;
+  }
+}
+
+// hide computer and only have window for smaller screens
+@media (max-width: 635px) {
+  body {
+    background-color: #eaeaea;
+  }
+  .outer {
+    border: none;
+    width: 100%;
+    .inner {
+      .window-label {
+        width: 95%;
+      }
+      .window {
+        width: 95%;
+      }
+    }
+  }
+  .rectangle, .trapezoid {
+    display: none;
+  }
+}
+
+// height media queries
+@media (max-height: 700px) and (min-width: 1000px) {
+  .instructions {
+    img {
+      width: 40px;
+    }
+  }
+  .outer {
+    height: 350px;
+    width: 650px;
+    .inner {
+      .window {
+        min-height: 190px;
+      }
+    }
+  }
 }
