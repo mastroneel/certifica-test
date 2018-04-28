@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:800');
 @import url('https://fonts.googleapis.com/css?family=Overpass+Mono:700');
 
-
 // header styles
 .instructions {
   text-align: center;
@@ -72,6 +71,7 @@
         }
       }
     }
+    // terminal window styles
     .window {
       width: 79.8%;
       min-height: 250px;
@@ -139,7 +139,6 @@
   height: 0;
   border: 40px solid rgba(0,0,0,0);
   border-top: 0 solid;
-  // border-bottom: 70px solid #60c7ae;
   border-bottom: 70px solid #848484;
   margin: 0 auto;
 }
