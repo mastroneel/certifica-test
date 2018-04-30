@@ -12,7 +12,7 @@
 
     <div class="instructions">
       <img src="img/logo.png">
-      <h2>Please enter your information, then press 'enter'</h2>
+      <h2>Please enter your information</h2>
       <p>
         <span>Already</span> have an account?
         <a id="signin-signup" href="#">Sign In</a>
@@ -50,6 +50,8 @@
             <br>
             <label for="confirm-password">> confirm-password$</label>
             <input size="1" id="confirm-password" type="password" autocomplete="disabled" /><div class="caret caret-6"></div>
+            <br>
+            <input type="submit" value="Sign Up">
           </form>
           <form id="signin">
             <label class="first-label" for="signin-username">> username$</label>
@@ -57,6 +59,8 @@
             <br>
             <label for="signin-password">> password$</label>
             <input size="1" id="signin-password" type="password" required autocomplete="disabled" /><div class="caret caret-8"></div>
+            <br>
+            <input type="submit" value="Sign In">
           </form>
         </div>
       </div>
@@ -133,14 +137,14 @@ $('#password').keypress(function(e) {
 });
 
 // alert account created on submit
-$('#confirm-password').keypress(function(e) {
-  if (e.which == 13) {
-      $('#signup').submit();
-      if(confirm('Account created! Please check your email')){
-        window.location.reload();
-      }
-  }
-});
+// $('#confirm-password').keypress(function(e) {
+//   if (e.which == 13) {
+//       $('#signup').submit();
+//       if(confirm('Account created! Please check your email')){
+//         window.location.reload();
+//       }
+//   }
+// });
 
 $('#signin-username').keypress(function(e) {
   if (e.which == 13) {
@@ -150,46 +154,58 @@ $('#signin-username').keypress(function(e) {
 });
 
 // redirect to welcome in page on submit
-$('#signin-password').keypress(function(e) {
-  if (e.which == 13) {
-    window.location = "pages/signed-in.html";
-  }
-});
+// $('#signin-password').keypress(function(e) {
+//   if (e.which == 13) {
+//     window.location = "pages/signed-in.html";
+//   }
+// });
 
 // show next line's label and caret on focus
+$( "#first-name" ).focus(function() {
+  // $("label[for='last-name']").css("visibility", "visible");
+  $(".caret").css("visibility", "hidden");
+  $(".caret-1").css("visibility", "visible");
+});
+
 $( "#last-name" ).focus(function() {
-  $("label[for='last-name']").css("visibility", "visible");
-  $(".caret-1").css("visibility", "hidden");
+  // $("label[for='last-name']").css("visibility", "visible");
+  $(".caret").css("visibility", "hidden");
   $(".caret-2").css("visibility", "visible");
 });
 
 $( "#email" ).focus(function() {
-  $("label[for='email']").css("visibility", "visible");
-  $(".caret-2").css("visibility", "hidden");
+  // $("label[for='email']").css("visibility", "visible");
+  $(".caret").css("visibility", "hidden");
   $(".caret-3").css("visibility", "visible");
 });
 
 $( "#username" ).focus(function() {
-  $("label[for='username']").css("visibility", "visible");
-  $(".caret-3").css("visibility", "hidden");
+  // $("label[for='username']").css("visibility", "visible");
+  $(".caret").css("visibility", "hidden");
   $(".caret-4").css("visibility", "visible");
 });
 
 $( "#password" ).focus(function() {
-  $("label[for='password']").css("visibility", "visible");
-  $(".caret-4").css("visibility", "hidden");
+  // $("label[for='password']").css("visibility", "visible");
+  $(".caret").css("visibility", "hidden");
   $(".caret-5").css("visibility", "visible");
 });
 
 $( "#confirm-password" ).focus(function() {
-  $("label[for='confirm-password']").css("visibility", "visible");
-  $(".caret-5").css("visibility", "hidden");
+  // $("label[for='confirm-password']").css("visibility", "visible");
+  $(".caret").css("visibility", "hidden");
   $(".caret-6").css("visibility", "visible");
 });
 
+$( "#signin-username" ).focus(function() {
+  // $("label[for='signin-password']").css("visibility", "visible");
+  $(".caret").css("visibility", "hidden");
+  $(".caret-7").css("visibility", "visible");
+});
+
 $( "#signin-password" ).focus(function() {
-  $("label[for='signin-password']").css("visibility", "visible");
-  $(".caret-7").css("visibility", "hidden");
+  // $("label[for='signin-password']").css("visibility", "visible");
+  $(".caret").css("visibility", "hidden");
   $(".caret-8").css("visibility", "visible");
 });
 

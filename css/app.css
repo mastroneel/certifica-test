@@ -75,6 +75,7 @@
         height: 1.2em;
         width: 0.7em;
         margin-top: -4px;
+        margin-left: -6px;
         vertical-align: middle;
         background-color: #262626;
         visibility: hidden; }
@@ -83,8 +84,7 @@
       .outer .inner .window form .transparent {
         opacity: 0; }
       .outer .inner .window form label {
-        font-weight: normal;
-        visibility: hidden; }
+        font-weight: normal; }
       .outer .inner .window form .first-label {
         visibility: visible; }
       .outer .inner .window form input {
@@ -94,6 +94,17 @@
           outline: none; }
       .outer .inner .window form input:-webkit-autofill {
         -webkit-box-shadow: 0 0 0 30px white inset; }
+      .outer .inner .window form input[type=submit] {
+        background-color: #489886;
+        border: 1px solid #489886;
+        border-radius: 3px;
+        padding: 5px 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: 'Nunito', sans-serif;
+        color: #fff;
+        display: block;
+        margin: 10px auto; }
 
 .trapezoid {
   -webkit-box-sizing: content-box;
@@ -194,7 +205,7 @@
     width: 40px; }
 
   .outer {
-    height: 350px;
+    height: 370px;
     width: 650px; }
     .outer .inner .window {
       min-height: 190px; } }

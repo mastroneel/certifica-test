@@ -96,6 +96,7 @@
           height: 1.2em;
           width: 0.7em;
           margin-top: -4px;
+          margin-left: -6px;
           vertical-align: middle;
           background-color: #262626;
           visibility: hidden;
@@ -109,7 +110,7 @@
         }
         label {
           font-weight: normal;
-          visibility: hidden;
+          // visibility: hidden;
         }
         .first-label {
           visibility: visible;
@@ -124,6 +125,18 @@
         // get rid of automatic Chrome autofill background
         input:-webkit-autofill {
             -webkit-box-shadow: 0 0 0 30px white inset;
+        }
+        input[type=submit] {
+          background-color: #489886;
+          border: 1px solid #489886;
+          border-radius: 3px;
+          padding: 5px 15px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-family: 'Nunito', sans-serif;
+          color: #fff;
+          display: block;
+          margin: 10px auto;
         }
       }
     }
@@ -290,7 +303,7 @@
     }
   }
   .outer {
-    height: 350px;
+    height: 370px;
     width: 650px;
     .inner {
       .window {
